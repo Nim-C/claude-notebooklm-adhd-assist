@@ -5,7 +5,7 @@ Study tools for **NotebookLM + Claude**, shaped for an ADHD brain. Upload one fi
 | Skill | What it does | When it runs |
 | --- | --- | --- |
 | `notebooklm-adhd-notebook` | Opens NotebookLM in Chrome, creates a new notebook and sets its chat to ADHD-style answers (answer first, short numbered steps, nothing important cut). | When you ask Claude to create a NotebookLM notebook with ADHD rules. Needs the Claude in Chrome extension and a Google sign-in. |
-| `summary-adaptation` | Turns a NotebookLM summary (or any study material) into a study page in the language you want (by default, the language you write in): bottom line first, numbered steps, reading time per part, nothing skipped. | When you ask for a summary or to adapt study material, or type `/summary-adaptation`. |
+| `summary-adaptation` | Takes the summary NotebookLM gave you in your notebook and turns it into a study page in the language you want (by default, the language you write in): bottom line first, numbered steps, reading time per part, nothing skipped. It asks for your notebook link and reads the summary from it in Chrome. | Type `/summary-adaptation` in a new chat, or ask to adapt a NotebookLM summary. Needs the Claude in Chrome extension and a Google sign-in. |
 | `notebooklm-adhd-settings` | Shows and changes one choice: should ADHD mode turn on automatically when you use the NotebookLM tools? Always / only apply the rules to the page / ask each time. | Type `/notebooklm-adhd-settings`. The first time you use a NotebookLM tool, you are asked this automatically. |
 
 ## Requirement: the ADHD plugin
@@ -25,6 +25,15 @@ This plugin needs the **adhd-mode** plugin. Install it first:
 4. Click **Upload skill** and choose `notebooklm-adhd-notebook.zip`.
 
 If you do not see Upload skill, turn on **Code execution** on the same screen first.
+
+## How a study session goes
+
+1. In NotebookLM: collect sources with **Deep Research**.
+2. In the notebook's chat: ask for a summary of the sources.
+3. In Claude: open a new chat and type `/summary-adaptation`.
+4. Send the notebook link when asked. Claude opens it in Chrome, reads the summary and builds the adapted page.
+
+If the notebook has no sources or no summary yet, Claude tells you which step is missing; do it and come back.
 
 ## Notes
 

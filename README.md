@@ -5,7 +5,7 @@ Study tools for **NotebookLM + Claude**, shaped for an ADHD brain. Upload one fi
 | Skill | What it does | When it runs |
 | --- | --- | --- |
 | `notebooklm-adhd-notebook` | Opens NotebookLM in Chrome, creates a new notebook and sets its chat to ADHD-style answers (answer first, short numbered steps, nothing important cut). | When you ask Claude to create a NotebookLM notebook with ADHD rules. Needs the Claude in Chrome extension and a Google sign-in. |
-| `summary-adaptation` | Turns a NotebookLM summary (or any study material) into a Hebrew study page: bottom line first, numbered steps, reading time per part, nothing skipped. | When you ask for a summary or to adapt study material, or type `/summary-adaptation`. |
+| `summary-adaptation` | Turns a NotebookLM summary (or any study material) into a study page in the language you want (by default, the language you write in): bottom line first, numbered steps, reading time per part, nothing skipped. | When you ask for a summary or to adapt study material, or type `/summary-adaptation`. |
 | `notebooklm-adhd-settings` | Shows and changes one choice: should ADHD mode turn on automatically when you use the NotebookLM tools? Always / only apply the rules to the page / ask each time. | Type `/notebooklm-adhd-settings`. The first time you use a NotebookLM tool, you are asked this automatically. |
 
 ## Requirement: the ADHD plugin

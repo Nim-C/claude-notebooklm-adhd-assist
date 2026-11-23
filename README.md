@@ -1,12 +1,11 @@
 # claude-notebooklm-adhd-assist
 
-Study tools for **NotebookLM + Claude**, shaped for an ADHD brain. Upload one file to Claude and you get three skills:
+Study tools for **NotebookLM + Claude**, shaped for an ADHD brain. NotebookLM stays as it is; the ADHD adaptation happens in Claude, when it reads the summary from your notebook. You get two skills:
 
 | Skill | What it does | When it runs |
 | --- | --- | --- |
-| `notebooklm-adhd-notebook` | Opens NotebookLM in Chrome, creates a new notebook and sets its chat to ADHD-style answers (answer first, short numbered steps, nothing important cut). | When you ask Claude to create a NotebookLM notebook with ADHD rules. Needs the Claude in Chrome extension and a Google sign-in. |
-| `summary-adaptation` | Takes the summary NotebookLM gave you in your notebook and turns it into a study page in the language you want (by default, the language you write in): bottom line first, numbered steps, reading time per part, nothing skipped. It asks for your notebook link and reads the summary from it in Chrome. | Type `/summary-adaptation` in a new chat, or ask to adapt a NotebookLM summary. Needs the Claude in Chrome extension and a Google sign-in. |
-| `notebooklm-adhd-settings` | Shows and changes one choice: should ADHD mode turn on automatically when you use the NotebookLM tools? Always / only apply the rules to the page / ask each time. | Type `/notebooklm-adhd-settings`. The first time you use a NotebookLM tool, you are asked this automatically. |
+| `notebooklm-summary-adaptation` | Takes the summary NotebookLM gave you in your notebook and turns it into a study page in the language you want (by default, the language you write in): bottom line first, numbered steps, reading time per part, nothing skipped. It asks for your notebook link and reads the summary from it in Chrome. | Type `/notebooklm-summary-adaptation` in a new chat, or ask to adapt a NotebookLM summary. Needs the Claude in Chrome extension and a Google sign-in. |
+| `notebooklm-adhd-settings` | Shows and changes one choice: should ADHD mode turn on automatically when you adapt a NotebookLM summary? Always / only apply the rules to the page / ask each time. | Type `/notebooklm-adhd-settings`. The first time you adapt a summary, you are asked this automatically. |
 
 ## Install in Claude Code: just ask Claude
 
@@ -39,20 +38,20 @@ If you do not see Upload skill, turn on **Code execution** on the same screen fi
 
 ## Dependency on the ADHD plugin
 
-Like two code packages: this plugin depends on **adhd-mode** and declares it in `plugin.json` (`"dependencies": ["adhd-mode@claude-code-adhd-assist"]`). `summary-adaptation` loads the ADHD rules from `adhd-mode:adhd-on` each time it runs, so when the ADHD plugin is updated, summaries follow the new rules with no change here. If the ADHD plugin is missing (possible only in the chat), `summary-adaptation` stops and links to it.
+Like two code packages: this plugin depends on **adhd-mode** and declares it in `plugin.json` (`"dependencies": ["adhd-mode@claude-code-adhd-assist"]`). `notebooklm-summary-adaptation` loads the ADHD rules from `adhd-mode:adhd-on` each time it runs, so when the ADHD plugin is updated, summaries follow the new rules with no change here. If the ADHD plugin is missing (possible only in the chat), `notebooklm-summary-adaptation` stops and links to it.
 
 ## How a study session goes
 
 1. In NotebookLM: collect sources with **Deep Research**.
 2. In the notebook's chat: ask for a summary of the sources.
-3. In Claude: open a new chat and type `/summary-adaptation`.
+3. In Claude: open a new chat and type `/notebooklm-summary-adaptation`.
 4. Send the notebook link when asked. Claude opens it in Chrome, reads the summary and builds the adapted page.
 
 If the notebook has no sources or no summary yet, Claude tells you which step is missing; do it and come back.
 
 ## Notes
 
-- `summary-adaptation` always applies the ADHD rules to the summary page. Whether ADHD mode also turns on in the chat is your choice (see `/notebooklm-adhd-settings`).
+- `notebooklm-summary-adaptation` always applies the ADHD rules to the summary page. Whether ADHD mode also turns on in the chat is your choice (see `/notebooklm-adhd-settings`).
 - Where the choice is kept: in Claude Code, in `~/.claude/notebooklm-adhd-settings.json`. In the Claude chat, in Claude's memory when memory is on; otherwise you are asked again in each new chat.
 - The zip holds the same files you see in this repository.
 

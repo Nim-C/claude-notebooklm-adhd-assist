@@ -11,6 +11,7 @@ Always use Claude in Chrome (mcp__claude-in-chrome__* tools), because the user i
 
 ## Steps
 
+0. Run the "Choice check" in the skill `notebooklm-adhd-notebook:notebooklm-adhd-settings`. It decides whether ADHD mode turns on in this chat (and asks the user the first time). Then continue with step 1.
 1. Load the `anthropic-skills:chrome-browser` skill if it is listed.
 2. Load the tools in ONE ToolSearch call:
    `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__form_input`

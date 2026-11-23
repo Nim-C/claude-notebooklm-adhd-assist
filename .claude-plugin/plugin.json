@@ -1,7 +1,7 @@
 {
   "name": "notebooklm-adhd-notebook",
   "version": "1.1.0",
-  "description": "NotebookLM study tools: create a NotebookLM notebook with ADHD-mode output rules, and adapt its summaries into ADHD-style Hebrew study pages (summary-adaptation). Requires the adhd-mode plugin.",
+  "description": "NotebookLM study tools: create a NotebookLM notebook with ADHD-mode output rules, adapt its summaries into ADHD-style Hebrew study pages (summary-adaptation), and choose whether ADHD mode turns on with them (/notebooklm-adhd-settings). Requires the adhd-mode plugin.",
   "dependencies": [
     "adhd-mode@claude-code-adhd-assist"
   ]

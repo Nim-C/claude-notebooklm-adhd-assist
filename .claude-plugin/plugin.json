@@ -1,6 +1,6 @@
 {
   "name": "notebooklm-adhd-notebook",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "NotebookLM study tools: adapt the summary from your NotebookLM notebook into an ADHD-style study page in your language (notebooklm-summary-adaptation), and choose whether ADHD mode turns on with it (/notebooklm-adhd-settings). Requires the adhd-mode plugin.",
   "dependencies": [
     "adhd-mode@claude-code-adhd-assist"

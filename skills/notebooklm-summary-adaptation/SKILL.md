@@ -20,7 +20,7 @@ description: "התאמת סיכומים: לוקחים את הסיכום ש-Noteb
 הסקיל לוקח את הסיכום הזה ובונה ממנו את הדף המותאם.
 
 ## שלב הקישור: מביאים את הסיכום מ-NotebookLM
-1. בקשו מהמשתמש את הקישור למחברת, אם הוא עוד לא נתן אותו. שורה אחת: "שלח לי את הקישור למחברת ב-NotebookLM (מתחיל ב-https://notebooklm.google.com/notebook/)." קישור שלא מתחיל כך: מבקשים שוב.
+1. בקשו מהמשתמש את הקישור למחברת, אם הוא עוד לא נתן אותו. שורה אחת: "שלח לי את הקישור למחברת ב-NotebookLM (מתחיל ב-https://notebook.google.com/)." מקבלים גם קישור ישן שמתחיל ב-https://notebooklm.google.com/, כי הוא מפנה לכתובת החדשה. קישור שלא מתחיל באחת משתי הכתובות: מבקשים שוב.
 2. עובדים רק עם Claude in Chrome (כלי `mcp__claude-in-chrome__*`), כי שם המשתמש מחובר ל-Google. לא משתמשים בדפדפן המובנה או בדפדפן בענן. אם Chrome לא מחובר: אומרים את זה בשורה אחת ועוצרים.
 3. טוענים את הסקיל `anthropic-skills:chrome-browser` אם הוא ברשימה, ואת הכלים בקריאת ToolSearch אחת:
    `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__computer`

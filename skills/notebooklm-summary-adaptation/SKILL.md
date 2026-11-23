@@ -1,5 +1,5 @@
 ---
-name: summary-adaptation
+name: notebooklm-summary-adaptation
 description: "התאמת סיכומים: לוקחים את הסיכום ש-NotebookLM נתן במחברת של המשתמש ובונים ממנו דף סיכום לימודי בשפה שהמשתמש רוצה, בסגנון ADHD. להפעיל כשמבקשים להתאים סיכום של NotebookLM או חומר לימוד."
 ---
 
@@ -8,7 +8,7 @@ description: "התאמת סיכומים: לוקחים את הסיכום ש-Noteb
 ## דרישה: ה-plugin של ה-ADHD
 הסקיל הזה עובד רק כשה-plugin `adhd-mode` מותקן ומופעל, כי הכללים שלו מגיעים משם.
 אם הסקיל `adhd-mode:adhd-on` לא זמין: עוצרים, לא בונים סיכום, וכותבים למשתמש שורה אחת:
-"כדי להשתמש ב-summary-adaptation צריך להתקין את ה-plugin של ה-ADHD: https://github.com/Nim-C/claude-chat-adhd-assist (בצ'אט) או https://github.com/Nim-C/claude-code-adhd-assist (ב-Claude Code)."
+"כדי להשתמש ב-notebooklm-summary-adaptation צריך להתקין את ה-plugin של ה-ADHD: https://github.com/Nim-C/claude-chat-adhd-assist (בצ'אט) או https://github.com/Nim-C/claude-code-adhd-assist (ב-Claude Code)."
 
 ## שלב אפס: הבחירה של המשתמש לגבי מצב ה-ADHD
 מריצים את "Choice check" שבסקיל `notebooklm-adhd-notebook:notebooklm-adhd-settings`. הוא קובע אם להדליק את מצב ה-ADHD בצ'אט (ובפעם הראשונה שואל את המשתמש), ואז ממשיכים לשלב הראשון.

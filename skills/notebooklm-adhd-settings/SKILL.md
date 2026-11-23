@@ -5,7 +5,7 @@ description: "Shows and changes whether ADHD mode turns on automatically when th
 
 # NotebookLM + ADHD settings
 
-One setting: what happens to ADHD mode (the `adhd-mode` plugin) when the user uses a NotebookLM tool (`notebooklm-adhd-notebook` or `summary-adaptation`).
+One setting: what happens to ADHD mode (the `adhd-mode` plugin) when the user uses `notebooklm-summary-adaptation`.
 
 | Value | Meaning |
 | --- | --- |

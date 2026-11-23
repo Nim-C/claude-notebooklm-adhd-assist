@@ -8,23 +8,38 @@ Study tools for **NotebookLM + Claude**, shaped for an ADHD brain. Upload one fi
 | `summary-adaptation` | Takes the summary NotebookLM gave you in your notebook and turns it into a study page in the language you want (by default, the language you write in): bottom line first, numbered steps, reading time per part, nothing skipped. It asks for your notebook link and reads the summary from it in Chrome. | Type `/summary-adaptation` in a new chat, or ask to adapt a NotebookLM summary. Needs the Claude in Chrome extension and a Google sign-in. |
 | `notebooklm-adhd-settings` | Shows and changes one choice: should ADHD mode turn on automatically when you use the NotebookLM tools? Always / only apply the rules to the page / ask each time. | Type `/notebooklm-adhd-settings`. The first time you use a NotebookLM tool, you are asked this automatically. |
 
-## Requirement: the ADHD plugin
+## Install in Claude Code: just ask Claude
 
-This plugin needs the **adhd-mode** plugin. Install it first:
+Tell Claude Code:
 
-- Claude chat: **[claude-chat-adhd-assist](https://github.com/Nim-C/claude-chat-adhd-assist)**
-- Claude Code: **[claude-code-adhd-assist](https://github.com/Nim-C/claude-code-adhd-assist)**
+> Install the plugin from https://github.com/Nim-C/claude-notebooklm-adhd-assist
 
-`summary-adaptation` loads the ADHD rules from `adhd-mode:adhd-on` each time it runs, so when you update the ADHD plugin, summaries follow the new rules with no change here. Without the ADHD plugin it stops and tells you to install it. `plugin.json` declares this as a dependency (`adhd-mode@claude-code-adhd-assist`).
+That is all. The ADHD plugin it needs is installed with it.
 
-## Install (one file)
+**For Claude (do this when asked to install from this repository):** run these two commands yourself, in this order. Do not ask the user to run them.
 
-1. Install the ADHD plugin (see above).
-2. Download **[notebooklm-adhd-notebook.zip](notebooklm-adhd-notebook.zip)** (open it, then click the download button).
-3. In Claude, open **Settings** → **Capabilities** → **Skills**.
-4. Click **Upload skill** and choose `notebooklm-adhd-notebook.zip`.
+```
+claude plugin marketplace add Nim-C/claude-code-adhd-assist
+claude plugin install notebooklm-adhd-notebook@claude-code-adhd-assist
+```
+
+The second command also installs the dependency `adhd-mode@claude-code-adhd-assist`. If it is already installed, it is reused, not installed twice. Then tell the user in one line that the plugins are installed and take effect in a new session (or after `/reload-plugins`).
+
+By hand, the same thing from a shell: `claude plugin install notebooklm-adhd-notebook --marketplace Nim-C/claude-code-adhd-assist`.
+
+## Install in the Claude chat (two uploads)
+
+The Claude chat cannot install plugins by itself, so here you upload two separate files, the ADHD plugin first:
+
+1. From **[claude-chat-adhd-assist](https://github.com/Nim-C/claude-chat-adhd-assist)**, download `adhd-mode-plugin.zip`. Skip this if you already have it.
+2. From this repository, download **[notebooklm-adhd-notebook.zip](notebooklm-adhd-notebook.zip)** (open it, then click the download button).
+3. In Claude, open **Settings** → **Capabilities** → **Skills**, click **Upload skill**, and upload each file.
 
 If you do not see Upload skill, turn on **Code execution** on the same screen first.
+
+## Dependency on the ADHD plugin
+
+Like two code packages: this plugin depends on **adhd-mode** and declares it in `plugin.json` (`"dependencies": ["adhd-mode@claude-code-adhd-assist"]`). `summary-adaptation` loads the ADHD rules from `adhd-mode:adhd-on` each time it runs, so when the ADHD plugin is updated, summaries follow the new rules with no change here. If the ADHD plugin is missing (possible only in the chat), `summary-adaptation` stops and links to it.
 
 ## How a study session goes
 
